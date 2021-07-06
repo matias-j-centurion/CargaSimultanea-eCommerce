@@ -1,0 +1,25 @@
+@model CSeC.web.Models.Publicaciones
+
+@{
+    ViewData["Title"] = "Publicaciones - Editar";
+
+}
+
+<h1>@ViewData["Title"]</h1>
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Actualizar" method="post">
+            <div class="form-group">
+                <label asp-for="Titulo">Titulo</label>
+                <input type="text" asp-for="Titulo">
+            </div>
+            <div class="form-group">
+                <label asp-for="Precio">Precio</label>
+                <input type="number" asp-for="Precio">
+            </div>
+            <input type="submit" value="Guardar">
+            <input type="hidden" asp-for="ID">
+        </form>
+    </div>
+</div>

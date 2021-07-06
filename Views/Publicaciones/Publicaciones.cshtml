@@ -1,0 +1,43 @@
+@model IEnumerable<CSeC.web.Models.Publicaciones>
+
+@{
+    ViewData["Title"] = "Publicaciones";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+        <a asp-action="Create">Crear nueva Publicacion</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>Titulo</th>
+            <th>Precio</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+             
+                <td>
+                        @item.Titulo
+                </td>
+                <td>
+                        @item.Precio
+                </td>
+                <td>
+                        @item.Categoria
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.ID">Editar</a>
+                </td>
+            </tr>
+            }
+    </tbody>
+</table>
+
+@* </form> *@
